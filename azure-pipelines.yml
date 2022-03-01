@@ -7,11 +7,16 @@ trigger:
 - main
 
 pool: Container Apps
+parameters:
+  - name: param
+    type: object
+    default: [1,2,3,4,5]
 
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- ${{each filename in parameters.param}}:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
