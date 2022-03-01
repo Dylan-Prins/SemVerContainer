@@ -12,12 +12,13 @@ parameters:
     type: object
     default: ["1","2","3","4","5"]
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
+jobs:
 - ${{each filename in parameters.param}}:
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
+  - job: test
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
