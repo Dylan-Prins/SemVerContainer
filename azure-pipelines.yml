@@ -10,7 +10,11 @@ pool: Container Apps
 parameters:
   - name: param
     type: object
-    default: ["1","2","3","4","5"]
+    default:
+    - 1
+    - 2
+    - 3
+    - 4
 
 steps:
 - script: echo Hello, world!
