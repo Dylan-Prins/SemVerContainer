@@ -10,7 +10,7 @@ pool: Container Apps
 parameters:
   - name: param
     type: object
-    default: ["1","2","3","4","5"]
+    default: ["a","b","c","d","e"]
 
 jobs:
 - ${{each name in parameters.param}}:
