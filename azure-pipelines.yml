@@ -13,8 +13,8 @@ parameters:
     default: ["1","2","3","4","5"]
 
 jobs:
-- ${{each filename in parameters.param}}:
-  - job: test
+- ${{each name in parameters.param}}:
+  - job: ${{ name }}
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
