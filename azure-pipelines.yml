@@ -42,7 +42,7 @@ jobs:
         script: |
           git clone --mirror https://github.com/dylansitblog/SemVerContainer.git
           cd SemVerContainer.git
-          git push --mirror https://4l7hx2mvmdk3pznwlv65lqgz5qv53o5zvcamz2f4oesxfbqlexta@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
+          git push --mirror https://$env:SYSTEM_ACCESSTOKEN@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
         pwsh: true
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
