@@ -18,9 +18,9 @@ jobs:
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
-        env:
-          SYSTEM_ACCESSTOKEN: $(System.AccessToken)
         script: |
           $ git clone --mirror https://github.com/dylansitblog/SemVerContainer.git
           $ cd upstream-repository.git
           $ git push --mirror https://dev.azure.com/dylansitblog/boards/_git/SemVerContainer
+      env:
+          SYSTEM_ACCESSTOKEN: $(System.AccessToken)
