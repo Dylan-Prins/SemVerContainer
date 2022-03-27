@@ -22,5 +22,6 @@ jobs:
           git clone --mirror https://github.com/dylansitblog/SemVerContainer.git
           cd upstream-repository.git
           git push --mirror https://dev.azure.com/dylansitblog/boards/_git/SemVerContainer
+        pwsh: true
       env:
           SYSTEM_ACCESSTOKEN: $(System.AccessToken)
