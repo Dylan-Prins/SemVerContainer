@@ -15,9 +15,8 @@ parameters:
 jobs:
 - job: test
   steps:
-    - task: Bash@3
+    - task: CmdLine@2
       inputs:
-        targetType: 'inline'
         script: |
           # Update the list of packages
           sudo apt-get update
@@ -41,3 +40,4 @@ jobs:
         pwsh: true
       env:
           SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+    
