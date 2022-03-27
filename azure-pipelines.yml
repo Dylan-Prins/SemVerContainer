@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Container Apps
+# pool: Container Apps
 parameters:
   - name: param
     type: object
