@@ -40,8 +40,18 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          git clone --mirror https://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@github.com/dylansitblog/ITScripts.git
-          cd SemVerContainer.git
+          $username = 'dhr.prins@gmail.com'
+
+          function Get-BasicAuthCreds {
+            param([string]$Username,[string]$Password)
+            $AuthString = "{0}:{1}" -f $Username,$Password
+            $AuthBytes  = [System.Text.Encoding]::Ascii.GetBytes($AuthString)
+            return [Convert]::ToBase64String($AuthBytes)
+          }
+          $BasicCreds = Get-BasicAuthCreds -Username $username -Password $(GithubPat)
+
+          git clone --mirror https://$pat@github.com/dylansitblog/ITScripts.git
+          cd ITScripts.git
           git push --mirror https://$env:SYSTEM_ACCESSTOKEN@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
         pwsh: true
       env:
