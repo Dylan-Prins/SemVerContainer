@@ -50,7 +50,7 @@ jobs:
           }
           $BasicCreds = Get-BasicAuthCreds -Username $username -Password $(GithubPat)
 
-          git clone --mirror https://$pat@github.com/dylansitblog/ITScripts.git
+          git clone --mirror https://$BasicCreds@github.com/dylansitblog/ITScripts.git
           cd ITScripts.git
           git push --mirror https://$env:SYSTEM_ACCESSTOKEN@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
         pwsh: true
