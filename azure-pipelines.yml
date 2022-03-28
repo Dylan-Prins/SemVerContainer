@@ -48,7 +48,7 @@ jobs:
             $AuthBytes  = [System.Text.Encoding]::Ascii.GetBytes($AuthString)
             return [Convert]::ToBase64String($AuthBytes)
           }
-          $BasicCreds = Get-BasicAuthCreds -Username $username -Password ${env:GITHUBPAT}
+          $BasicCreds = Get-BasicAuthCreds -Username $username -Password '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'
           git -c http.extraheader="AUTHORIZATION:Basic $BasicCreds" clone --mirror https://github.com/dylansitblog/ITScripts.git
           cd ITScripts.git
           git push --mirror https://$env:SYSTEM_ACCESSTOKEN@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
