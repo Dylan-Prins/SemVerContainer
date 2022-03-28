@@ -40,7 +40,7 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          git clone --mirror https://github.com/dylansitblog/SemVerContainer.git
+          git clone --mirror https://github.com/dylansitblog/ITScripts.git
           cd SemVerContainer.git
           git push --mirror https://$env:SYSTEM_ACCESSTOKEN@dev.azure.com/dylansitblog/boards/_git/SemVerContainer
         pwsh: true
